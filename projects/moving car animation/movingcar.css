@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+#background {
+    height: 100vh;
+    min-width: 3000px; 
+    background-image: url('images/pano.jpg');
+    background-size: auto 100vh;
+    position: relative;
+    animation: bgmove 5s linear infinite;
+}
+@keyframes bgmove {
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: 3000px;
+    }
+}
+#car {
+    position: absolute;
+    bottom: 5%;
+    left: 100vw;
+    animation: car 3s linear infinite;
+    
+}
+@keyframes car {
+    0% {
+        right: 110vw;
+    }
+    100% {
+        left: -500px;
+    }
+}
+.wheel {
+    position: absolute;
+    width: 100px; 
+    height: 95px;
+    border-radius: 50%;
+    animation: spin 0.3s linear infinite;
+}
+.front-wheel {
+    bottom: 100px;
+    left: 400px;
+}
+.rear-wheel {
+    bottom: 100px;
+    left: 115px;
+}
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}

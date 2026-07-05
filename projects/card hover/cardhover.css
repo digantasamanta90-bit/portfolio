@@ -1,0 +1,160 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+}
+
+.container{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card{
+    position: relative;
+    overflow: hidden;
+    width: 23%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    background: #1e293b;
+    color: white;
+    box-shadow: var(--shadow);
+    transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+
+.card::before{
+    content: "";;
+    position: absolute;
+    top: -100%;
+    left: 0;;
+    width: 100%;
+    height: 100%;;
+    transition: 0.6s ease;;
+    z-index: 0;
+}
+
+
+
+.card1::before{
+    background: #06b6d4;
+}
+
+.card2::before{
+    background: #8b5cf6;
+}
+
+.card3::before{
+    background: #f97316;
+}
+
+
+
+.card > *{
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover::before{
+    top: 0;
+}
+
+.card:hover{
+    transform: translateY(-15px) scale(1.04);
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-number{
+    width: 26%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-number h1{
+    width: 95%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    box-shadow: var(--shadow);
+    transition: all 0.7s ease;
+}
+
+.card:hover .card-number h1{
+    transform: rotate(360deg) scale(1.1);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,0.7),
+    0 0 30px rgba(255,255,255,0.5),
+    0 0 45px rgba(255,255,255,0.3);
+}
+
+.card-content{
+    width: 90%;
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.card-content h2{
+    margin-bottom: 15px;
+}
+
+.card-content p{
+    line-height: 1.6;
+}
+
+.card-button{
+    width: 35%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    box-shadow: var(--shadow);
+    transition: 0.4s ease;
+}
+
+.card:hover .card-button{
+    transform: translateY(-5px);
+}
+
+.card-button a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
